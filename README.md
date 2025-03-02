@@ -59,6 +59,36 @@ iframeBus.on('iframeMessage', (message) => {
 
 ---
 
+## 🔹 Propagation Control and Ordered Handlers
+Both `AppEventBus` and `GlobalEventBus` support **ordered handlers** and **stopping propagation**. A listener can **prevent further handlers from executing** by returning `false`.
+
+#### 📌 **Example: Ordered Handlers and Stopping Propagation**
+```typescript
+import { AppEventBus } from 'alevent';
+
+const appBus = new AppEventBus<string>();
+
+appBus.on('message', (msg) => {
+  console.log(`[Handler 1] Received: ${msg}`);
+  return true; // Continue propagation
+}, 0);
+
+appBus.on('message', (msg) => {
+  console.log(`[Handler 2] Processing: ${msg}`);
+  return false; // Stop propagation
+}, 1);
+
+appBus.on('message', (msg) => {
+  console.log(`[Handler 3] Should not run`);
+}, 2);
+
+appBus.emit('message', 'Hello!');
+```
+✅ **Handlers execute in order** (by index).  
+✅ **Propagation stops** when a handler returns `false`.  
+
+---
+
 ## 📌 Features
 - 🚀 **Supports Ordered Handlers** – Event handlers execute in the order they were added.
 - 🛑 **Propagation Control** – Listeners can stop event propagation by returning `false`.
@@ -91,5 +121,13 @@ Emits an event using `window.dispatchEvent`.
 
 ---
 
+## 🔧 Development & Testing
+Run tests to ensure functionality:
+```sh
+npm test
+```
 
-
+Build the package:
+```sh
+npm run build
+```
