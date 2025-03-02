@@ -92,7 +92,4 @@ Emits an event using `window.dispatchEvent`.
 ---
 
 
-## 📝 License
-MIT License. Feel free to contribute and use `alevent` in your projects! 🚀
 
-# almentor
