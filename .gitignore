@@ -1,0 +1,26 @@
+# Node.js dependencies
+node_modules/
+dist/
+package-lock.json
+
+# TypeScript build artifacts
+*.tsbuildinfo
+
+# Jest test coverage and cache
+coverage/
+jest.cache/
+jest.config.js
+
+# Logs and system files
+*.log
+yarn-error.log
+npm-debug.log
+
+# Editor-specific files
+.vscode/
+.idea/
+
+# Git-related
+.DS_Store
+*.swp
+*.swo
