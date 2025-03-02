@@ -33,4 +33,4 @@ jobs:
       if: github.event_name == 'push' && github.ref == 'refs/heads/main'
       run: npm publish
       env:
-        NODE_AUTH_TOKEN: ${{ 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 }}
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
