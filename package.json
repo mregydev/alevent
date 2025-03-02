@@ -1,6 +1,6 @@
 {
   "name": "alevent",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "umd:main": "dist/index.umd.js",
@@ -28,5 +28,14 @@
     "ts-jest": "^29.2.6",
     "ts-node": "^10.9.2",
     "typescript": "5.7"
-  }
+  },
+  "keywords": [
+  "event-bus",
+  "microfrontend",
+  "pubsub",
+  "typescript",
+  "communication",
+  "cross-domain",
+  "javascript"
+]
 }
